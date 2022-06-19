@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'whatsapp-clone-task';
+  title = 'whatsapp-clone';
+  conversation: any;
+
+  onConversationSelected(conversation: any) {
+    this.conversation = conversation;
+  }
 }
