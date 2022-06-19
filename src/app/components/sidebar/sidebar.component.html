@@ -14,7 +14,7 @@
         </div>
         <div id="searchArea">
             <i id="searchIcon" class="fa fa-search"></i>
-            <input id="sideSearchInput" type="text" placeholder="Search or start the new chat">
+            <input [(ngModel)]="onSearch" id="sideSearchInput" type="text" placeholder="Search or start the new chat">
         </div>
     </div>
 
@@ -22,7 +22,7 @@
         <!-- <div id="nochat">
             All chats are archived
         </div> -->
-        <div class="conversation" *ngFor="let conversation of conversations"
+        <div class="conversation" *ngFor="let conversation of !onSearch ? conversations : filteredConversation()"
             (click)="conversationClicked.emit(conversation)">
             <div class="picture">
                 <img src="../../../assets/noPic.svg" alt="">
